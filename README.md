@@ -1,25 +1,27 @@
 # E-Commerce Customer Analytics
 
-## Project Overview
-
-This project analyzes an e-commerce dataset to understand **sales performance, product trends, and customer behavior**.
-Using **SQL Server for data analysis** and **Power BI for visualization**, the project explores key business metrics and applies **RFM (Recency, Frequency, Monetary) analysis** to segment customers.
-
-The goal is to transform raw transactional data into **actionable insights that help businesses understand customer value and product performance.**
+This project analyzes customer purchasing behavior and sales performance of an e-commerce platform using **SQL Server and Power BI**. The objective is to generate actionable insights about revenue trends, product performance, and customer segments.
 
 ---
 
-## Tools & Technologies
+## Project Overview
 
-* **SQL Server (SSMS)** – Data cleaning, transformation, and analysis
-* **Power BI** – Interactive dashboard and data visualization
-* **CSV Dataset** – Raw e-commerce transactional data
+Understanding customer behavior is essential for improving sales and retention in e-commerce businesses.
+
+This project performs an **end-to-end analytics workflow** including:
+
+• Data exploration and transformation using **SQL Server**
+• Customer segmentation using **RFM Analysis**
+• Data visualization using **Power BI**
+• Business insight generation from transactional data
 
 ---
 
 ## Dataset
 
-The project uses the **Olist Brazilian E-Commerce Dataset**, which contains information about:
+This project uses the **Brazilian E-Commerce Public Dataset by Olist**, which contains real transactional data from an online marketplace.
+
+The dataset includes:
 
 * Customers
 * Orders
@@ -30,10 +32,101 @@ The project uses the **Olist Brazilian E-Commerce Dataset**, which contains info
 * Sellers
 * Geolocation
 
-Due to **GitHub file size limitations**, the raw dataset is not included in this repository.
+Dataset source:
 
-You can download it here:
 https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
+
+Note: Due to GitHub file size limitations, the dataset is not stored in this repository. You can download it from the Kaggle link above to reproduce the analysis.
+
+---
+
+## Tools & Technologies
+
+**SQL Server (SSMS)**
+Used for data cleaning, transformation, and analytical queries.
+
+**SQL**
+Used for data analysis and customer segmentation using the **RFM model**.
+
+**Power BI**
+Used to create an interactive dashboard and visualize insights.
+
+**GitHub**
+Used for version control and project documentation.
+
+---
+
+## Database Schema
+
+The database schema connects customers, orders, payments, and product tables to enable full e-commerce analysis.
+
+![Database Schema](er_diagram.png)
+
+---
+
+## Dashboard Overview
+
+The Power BI dashboard consists of three main pages that provide insights into sales performance, product trends, and customer segmentation.
+
+---
+
+### Sales Overview
+
+This page presents high-level business performance metrics including:
+
+* Total Revenue
+* Total Orders
+* Average Order Value
+* Total Customers
+* Monthly Revenue Trend
+
+![Sales Overview](sales_overview.png)
+
+---
+
+### Product Insights
+
+This page highlights product performance and identifies the most profitable categories and products.
+
+Key insights include:
+
+* Top selling product categories
+* Revenue contribution by category
+* Best performing products
+
+![Product Insights](product_insights.png)
+
+---
+
+### Customer Segmentation
+
+Customers are segmented using **RFM Analysis**:
+
+* **Recency** – How recently a customer placed an order
+* **Frequency** – How often a customer purchases
+* **Monetary** – Total amount spent by the customer
+
+Customers are grouped into segments such as:
+
+* Champions
+* Loyal Customers
+* Others
+
+![Customer Segmentation](customer_segmentation.png)
+
+---
+
+## Key Insights
+
+• Total Revenue: **$13.22M**
+• Total Orders: **96K**
+• Average Order Value: **$137**
+
+Additional findings:
+
+* Health & Beauty is the top performing product category
+* Loyal and champion customers contribute significantly to revenue
+* Customer segmentation helps identify high-value customers
 
 ---
 
@@ -42,98 +135,29 @@ https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
 ```
 ecommerce-customer-analytics
 │
-├── dashboard_images        # Dashboard screenshots for preview
+├── sales_overview.png
+├── product_insights.png
+├── customer_segmentation.png
+├── er_diagram.png
 │
-├── powerbi                 # Power BI dashboard file (.pbix)
-│
-├── schema                  # Database schema / ER diagram
-│
-├── sql                     # SQL queries used for analysis
+├── ecommerce_customer_analytics_dashboard.pbix
+├── ecommerce_customer_analytics.sql
 │
 └── README.md
 ```
 
 ---
 
-## Data Preparation
+## How to Reproduce This Project
 
-The CSV files were imported into **SQL Server**, where they were structured into relational tables.
-Primary and foreign key relationships were established to build a structured data model.
-
-Data transformations included:
-
-* Joining multiple tables
-* Aggregating order data
-* Creating customer-level metrics
-* Preparing data for customer segmentation
-
----
-
-## Customer Segmentation (RFM Analysis)
-
-Customers were segmented using the **RFM Model**:
-
-**Recency** – How recently a customer made a purchase
-**Frequency** – How often the customer makes purchases
-**Monetary** – Total amount spent by the customer
-
-Customers were categorized into segments such as:
-
-* **Champions** – Highly valuable and recent customers
-* **Loyal Customers** – Frequent buyers
-* **Others** – Lower engagement customers
-
-This segmentation helps businesses identify **high-value customers and retention opportunities.**
-
----
-
-## Dashboard Pages
-
-### Sales Overview
-
-Displays overall business performance including revenue, total orders, average order value, and sales trends over time.
-
-![Sales Overview](dashboard_images/sales_overview.png)
-
----
-
-### Product Insights
-
-Analyzes product performance and highlights the **top-performing product categories and products by revenue**.
-
-![Product Insights](dashboard_images/product_insights.png)
-
----
-
-### Customer Segmentation
-
-Visualizes **customer segments using RFM analysis** and shows revenue contribution by customer type.
-
-![Customer Segmentation](dashboard_images/customer_segmentation.png)
-
----
-
-## Key Insights
-
-* Total Revenue: **$13.22M**
-* Total Orders: **96K**
-* Average Order Value: **137**
-* Majority of customers fall into the **"Others" segment**, indicating potential opportunities for improving customer retention.
-* Certain product categories generate significantly higher revenue, highlighting **high-performing product lines.**
-
----
-
-## Future Improvements
-
-Possible enhancements for this project include:
-
-* Customer lifetime value (CLV) analysis
-* Sales forecasting
-* Geographic sales analysis
-* Marketing campaign effectiveness analysis
+1. Download the dataset from Kaggle.
+2. Import the CSV files into SQL Server.
+3. Run the SQL queries to perform data analysis and RFM segmentation.
+4. Open the Power BI dashboard file to explore the visual insights.
 
 ---
 
 ## Author
 
 **Atishay Jain**
+Aspiring Data Analyst
